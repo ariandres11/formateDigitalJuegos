@@ -1,4 +1,5 @@
 import 'package:app/trenes_game.dart';
+import 'package:app/ScrollController.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,11 @@ Future<void> main() async {
               child: SizedBox(
                 width: 120,
                 height: 120,
-                child: NumberSelector(upperLimit: 10),
+                //Instancio el selector de numero con un limite sup
+                //Descomentar
+                //child: NumberSelector(upperLimit: 10),
+                //Comentar
+                child: ScrollControllerTest(),
               ),
             ),
           ],
@@ -36,3 +41,4 @@ Future<void> main() async {
     ),
   );
 }
+

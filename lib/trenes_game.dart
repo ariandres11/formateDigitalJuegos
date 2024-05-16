@@ -12,6 +12,7 @@ class TrenesGame extends FlameGame with TapDetector{
   Future<void> onLoad() async{
     addAll([
       //Background(),
+      //Instancias de tolva con posicion
       Tolva(tolvaPosition: Vector2(40,240)),
       Tolva(tolvaPosition: Vector2(260,240)),
 

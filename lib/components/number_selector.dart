@@ -11,6 +11,7 @@ class NumberSelector extends StatefulWidget {
 
 class _NumberSelectorState extends State<NumberSelector> {
   int _currentNumber = 0;
+  final ScrollController _scrollController = ScrollController();
 
   void _increment() {
     setState(() {
@@ -30,25 +31,18 @@ class _NumberSelectorState extends State<NumberSelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.arrow_upward, color: Colors.red, size: 20,),
-            onPressed: _increment,
-          ),
-          Text(
-            '$_currentNumber',
-            style: TextStyle(
-              color: Colors.black),
-          ),
-          IconButton(
-            icon: Icon(Icons.arrow_downward, color: Colors.red, size: 20),
-            onPressed: _decrement,
-          ),
-        ],
+    return SingleChildScrollView(
+      //Descomentar
+      //controller: _scrollController,
+      child: Container(
+        color: Colors.white,
+        child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: List.generate(
+                50,
+                (index) => ListTile(
+                  title: Text('${index + 1}'),
+                ))),
       ),
     );
   }
