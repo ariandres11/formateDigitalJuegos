@@ -1,5 +1,5 @@
+import 'package:app/screens/debug_screen.dart';
 import 'package:app/trenes_game.dart';
-import 'package:app/ScrollController.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
@@ -14,32 +14,11 @@ Future<void> main() async {
   await Flame.device.fullScreen();
 
   final game = TrenesGame();
+
   runApp(
-    MaterialApp(
-      home: Scaffold(
-        
-        body: Stack(
-          children: [
-            GameWidget(
-              game: game,
-            ),
-            Positioned(
-              bottom: 100,
-              left: 120,
-              child: SizedBox(
-                width: 120,
-                height: 120,
-                //Instancio el selector de numero con un limite sup
-                //Descomentar
-                //child: NumberSelector(upperLimit: 10),
-                //Comentar
-                child: ScrollControllerTest(),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
+    GameWidget(game: game,initialActiveOverlays: const[DebugScreen.id], overlayBuilderMap: {
+      'mainMenu' : (context, _) => DebugScreen(game: game),
+    },)
   );
 }
 
