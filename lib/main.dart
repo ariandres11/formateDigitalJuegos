@@ -16,6 +16,7 @@ Future<void> main() async {
   runApp(
     MaterialApp(
       home: Scaffold(
+        
         body: Stack(
           children: [
             GameWidget(
