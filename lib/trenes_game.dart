@@ -1,13 +1,17 @@
 
 import 'package:app/components/tolva.dart';
+import 'package:app/screens/debug_screen.dart';
+import 'package:app/screens/menu.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/material.dart';
 
 import 'components/number_selector.dart';
 
 class TrenesGame extends FlameGame with TapDetector{
   TrenesGame();
-  
+
+
   @override
   Future<void> onLoad() async{
     addAll([
@@ -19,4 +23,23 @@ class TrenesGame extends FlameGame with TapDetector{
     ]);
     NumberSelector(upperLimit: 10);
   }
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Container(
+        child: ElevatedButton(
+          child: Text('Volver al menu'),
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DebugScreen()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+
 }

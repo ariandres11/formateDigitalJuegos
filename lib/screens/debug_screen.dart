@@ -4,6 +4,8 @@ import 'package:app/trenes_game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'game_screen.dart';
+
 class DebugScreen extends StatelessWidget{
   const DebugScreen({super.key});
 
@@ -20,12 +22,13 @@ class DebugScreen extends StatelessWidget{
       return Scaffold(
         body: Container(
           child: ElevatedButton(
-            child: Text('Estas en debug'),
+            child: Text('Estas en debug, si presionas vas al juego'),
             onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PruebaScreen()),
-                );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => JuegoScreen(TrenesGame())),
+              );
+
               },
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:app/screens/debug_screen.dart';
+import 'package:app/screens/menu.dart';
 import 'package:app/trenes_game.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
@@ -7,37 +8,17 @@ import 'package:flutter/services.dart';
 
 import 'components/number_selector.dart';
 
-void main() => runApp(MyApp());
-/*Future<void> main() async {
+
+Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   WidgetsFlutterBinding.ensureInitialized();
-  await Flame.device.fullScreen();*/
+  await Flame.device.fullScreen();
+  runApp(MaterialApp(
+    home: MyApp(),
+  ));
+}
 
-  /*final game = TrenesGame();
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          children: [
-            GameWidget(
-              game: game,
-            ),
-            Positioned(
-              bottom: 100,
-              left: 120,
-              child: SizedBox(
-                width: 120,
-                height: 120,
-                child: NumberSelector(upperLimit: 10),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-  }*/
 
 
 
