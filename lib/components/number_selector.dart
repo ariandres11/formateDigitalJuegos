@@ -1,48 +1,41 @@
 import 'package:flutter/material.dart';
 
 class NumberSelector extends StatefulWidget {
-  final int upperLimit;
-
-  NumberSelector({required this.upperLimit});
+  const NumberSelector({Key? key}) : super(key: key);
 
   @override
   _NumberSelectorState createState() => _NumberSelectorState();
 }
 
 class _NumberSelectorState extends State<NumberSelector> {
-  int _currentNumber = 0;
-  final ScrollController _scrollController = ScrollController();
-
-  void _increment() {
-    setState(() {
-      if (_currentNumber < widget.upperLimit) {
-        _currentNumber++;
-      }
-    });
-  }
-
-  void _decrement() {
-    setState(() {
-      if (_currentNumber > 0) {
-        _currentNumber--;
-      }
-    });
-  }
+  int _currentValue = 0;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      //Descomentar
-      //controller: _scrollController,
-      child: Container(
-        color: Colors.white,
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: List.generate(
-                50,
-                (index) => ListTile(
-                  title: Text('${index + 1}'),
-                ))),
+    return Scaffold(
+      body: Center(
+        child: ListWheelScrollView(
+          onSelectedItemChanged: (value) {
+            setState(() {
+              _currentValue = value;
+            });
+          },
+          itemExtent: 60,
+          diameterRatio: 1.5,
+          children: List<Widget>.generate(11, (index) {
+            return Container(
+
+              alignment: Alignment.center,
+              child: Text(
+                '$index',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: index == _currentValue ? Colors.orange : Colors.black,
+                ),
+              ),
+            );
+          }),
+        ),
       ),
     );
   }

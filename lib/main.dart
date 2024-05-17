@@ -5,7 +5,7 @@ import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:app/custom_scroll_behavior.dart';
 import 'components/number_selector.dart';
 
 
@@ -19,15 +19,15 @@ Future<void> main() async {
   ));
 }
 
-
-
-
-
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) => MaterialApp(
+
+    //NO TOCAR, HACE COMPATIBLE LO TACTIL CON LO WEB
+    scrollBehavior: CustomScrollBehavior(),
+
     //cambiar por Menu() cuando menu sea Stateless
     home: DebugScreen(),
   );

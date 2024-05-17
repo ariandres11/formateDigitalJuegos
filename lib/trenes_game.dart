@@ -21,7 +21,8 @@ class TrenesGame extends FlameGame with TapDetector{
       Tolva(tolvaPosition: Vector2(260,240)),
 
     ]);
-    NumberSelector(upperLimit: 10);
+    //Descomentar luego de crear NumberSelector
+    NumberSelector;
   }
 
   @override
