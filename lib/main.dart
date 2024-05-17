@@ -1,5 +1,4 @@
 import 'package:app/trenes_game.dart';
-import 'package:app/ScrollController.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +12,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Flame.device.fullScreen();
 
-  /*
   final game = TrenesGame();
   runApp(
     MaterialApp(
@@ -29,24 +27,12 @@ Future<void> main() async {
               child: SizedBox(
                 width: 120,
                 height: 120,
-                //Instancio el selector de numero con un limite sup
-                //Descomentar
-                //child: NumberSelector(upperLimit: 10),
-                //Comentar
-                child: ScrollControllerTest(),
+                child: NumberSelector(upperLimit: 10),
               ),
             ),
           ],
         ),
       ),
     ),
-  );*/
+  );
 }
-  class MyApp extends StatelessWidget {
-    @override
-  Widget build (BuildContext context) => MaterialApp(
-      home: DebugScreen();
-    );
-  }
-
-
