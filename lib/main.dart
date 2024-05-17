@@ -13,6 +13,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Flame.device.fullScreen();
 
+  /*
   final game = TrenesGame();
   runApp(
     MaterialApp(
@@ -39,6 +40,13 @@ Future<void> main() async {
         ),
       ),
     ),
-  );
+  );*/
 }
+  class MyApp extends StatelessWidget {
+    @override
+  Widget build (BuildContext context) => MaterialApp(
+      home: DebugScreen();
+    );
+  }
+
 
