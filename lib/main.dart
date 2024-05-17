@@ -5,9 +5,8 @@ import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:app/custom_scroll_behavior.dart';
+import 'package:app/components/custom_scroll_behavior.dart';
 import 'components/number_selector.dart';
-
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
