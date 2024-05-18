@@ -28,6 +28,6 @@ class MyApp extends StatelessWidget{
     scrollBehavior: CustomScrollBehavior(),
 
     //cambiar por Menu() cuando menu sea Stateless
-    home: DebugScreen(),
+    home: Menu(),
   );
 }

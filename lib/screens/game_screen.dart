@@ -14,23 +14,23 @@ class JuegoScreen extends StatelessWidget {
     return Scaffold(body:
         //Sin el SCSV hace overf
       SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            ElevatedButton(onPressed: (){
-              Navigator.push(
-                  context,
-                  //Reemplazar DebugScreen() por Menu()
-                  MaterialPageRoute(builder: (context) => DebugScreen())
-              );
-            },
-              // Reemplazar por Volver al menu
-          child: Text('Volver a debug screen'),
-            ),
-            GameWidget(game: game)
-          ],
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              ElevatedButton(
+                child: Text('Estas en debug, si presionas vas al juego'),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DebugScreen()),
+                  );
+                },
+              ),
+              GameWidget(game: game),
+            ],
+          ),
         ),
       )
       ,);
-    return GameWidget(game: game);
   }
 }

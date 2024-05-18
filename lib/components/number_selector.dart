@@ -18,8 +18,10 @@ class _NumberSelectorState extends State<NumberSelector> {
     return Scaffold(
       body: Center(
         child: Container(
+          constraints: BoxConstraints(minHeight: 30, maxHeight: 60, minWidth: 50, maxWidth: 80),
           height: widget.height,
           width: widget.width,
+          //"Rueda giratoria de elementos desplazables"
           child: ListWheelScrollView(
             onSelectedItemChanged: (value) {
               setState(() {
@@ -27,6 +29,7 @@ class _NumberSelectorState extends State<NumberSelector> {
               });
             },
             itemExtent: 60,
+            //Rel entre diametro de la rueda y altura elementos
             diameterRatio: 1.5,
             children: List<Widget>.generate(11, (index) {
               return Container(

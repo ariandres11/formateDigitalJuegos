@@ -1,40 +1,44 @@
 import 'package:flutter/material.dart';
 
+import '../assets.dart';
+import '../trenes_game.dart';
+import 'game_screen.dart';
+
 class Menu extends StatelessWidget {
-  const Menu({super.key});
+  const Menu({Key? key});
 
   @override
   Widget build(BuildContext context) {
+    final game = TrenesGame(); // Instancia de TrenesGame
+
     return Scaffold(
       body: Center(
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'assets/fondo.png',
+                Assets.background,
               ),
               fit: BoxFit.cover,
             ),
           ),
           alignment: Alignment.center,
-          child: const Column(
+          child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.all(15),
-                child: Text('Trenes', style: TextStyle(fontSize: 52),),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: ElevatedButton(
-                  child: const Text('juego'),
-                  onPressed: () { Navigator.pushNamed(context, '/menu');},
-                ),
+                padding: const EdgeInsets.all(15),
+                child: Text('Trenes', style: TextStyle(fontSize: 52)),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: ElevatedButton(
                   child: const Text('Salir'),
-                  onPressed:() { Navigator.pushNamed(context, '/menu');},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => JuegoScreen(game)),
+                    );
+                  },
                 ),
               ),
             ],
