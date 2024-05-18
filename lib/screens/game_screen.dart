@@ -33,42 +33,55 @@ class JuegoScreen extends StatelessWidget {
             alignment: Alignment.center,
             child: Stack(
               children: <Widget>[
-                Container(
-                    width: 320, height: 100, child: GameWidget(game: game)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      child: NumberSelector(),
-                    ),
-                    SizedBox(
-                      width: 60,
-                    ),
-                    Container(
-                      width: 100,
-                      height: 100,
-                      child: NumberSelector(),
-                    ),
-                  ],
-                ),
+
                 Center(
-                  child: Column(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
+                    child: Container(
+                        alignment: Alignment.center,
+                        width: 320, height: 100, child: GameWidget(game: game)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 120, 0, 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
-                        child: Text('Menu'),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Menu()),
-                          );
-                        },
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: NumberSelector(),
                       ),
                       SizedBox(
-                        height: 50,
+                        width: 60,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: NumberSelector(),
                       ),
                     ],
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 30, 500, 30),
+                    child: Column(
+                      children: [
+                        ElevatedButton(
+                          child: Text('Menu'),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Menu()),
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 //GameWidget(game: game),
