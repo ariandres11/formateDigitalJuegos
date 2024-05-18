@@ -20,12 +20,12 @@ class TrenesGame extends FlameGame with TapDetector{
     //Descomentar luego de crear NumberSelector
   }
 
-  @override
+ /* @override
   Widget build(BuildContext context){
     return Scaffold(
       body: Stack(
         children: [
-          NumberSelector(height: 10, width: 10),
+          //NumberSelector(height: 10, width: 10),
           Container(
             child: ElevatedButton(
               child: Text('Volver al menu'),
@@ -40,6 +40,5 @@ class TrenesGame extends FlameGame with TapDetector{
         ],
       ),
     );
-  }
-
+  }*/
 }
