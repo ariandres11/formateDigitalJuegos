@@ -24,37 +24,42 @@ class Menu extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Padding(
-                padding: EdgeInsets.all(15),
-                child: Text(
-                  'Trenes',
-                  style: GoogleFonts.lobster(),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: ElevatedButton(
-                  child: const Text('Jugar'),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const PruebaScreen()),
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: ElevatedButton(
-                  child: const Text('Salir'),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => JuegoScreen(game)),
-                    );
-                  },
-                ),
+              Column(
+                children: [
+                  Column(
+                    children: [
+                      const Text('Trenes',
+                        style:TextStyle(fontSize: 50)
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: ElevatedButton(
+                          child: const Text('Jugar'),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const PruebaScreen()),
+                            );
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: ElevatedButton(
+                          child: const Text('Salir'),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => JuegoScreen(game)),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),

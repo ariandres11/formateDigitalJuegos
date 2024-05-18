@@ -1,11 +1,7 @@
-import 'dart:html';
-
 import 'package:app/components/number_selector.dart';
-import 'package:app/screens/debug_screen.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../assets.dart';
 import '../trenes_game.dart';
 import 'menu.dart';

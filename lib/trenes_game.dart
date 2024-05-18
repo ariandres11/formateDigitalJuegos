@@ -1,10 +1,6 @@
 import 'package:app/components/tolva.dart';
-import 'package:app/screens/debug_screen.dart';
-import 'package:app/screens/menu.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/material.dart';
-import 'components/number_selector.dart';
 
 class TrenesGame extends FlameGame with TapDetector{
   TrenesGame();

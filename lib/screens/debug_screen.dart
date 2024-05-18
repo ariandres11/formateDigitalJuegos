@@ -1,9 +1,5 @@
-
-import 'package:app/screens/prueba_screen.dart';
 import 'package:app/trenes_game.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'game_screen.dart';
 
 class DebugScreen extends StatelessWidget{

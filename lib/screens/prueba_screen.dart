@@ -1,6 +1,3 @@
-
-import 'package:app/screens/debug_screen.dart';
-import 'package:app/screens/game_screen.dart';
 import 'package:app/trenes_game.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/cupertino.dart';
