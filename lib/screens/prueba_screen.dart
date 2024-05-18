@@ -1,6 +1,8 @@
 
 import 'package:app/screens/debug_screen.dart';
+import 'package:app/screens/game_screen.dart';
 import 'package:app/trenes_game.dart';
+import 'package:flame/game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,18 +19,8 @@ class PruebaScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      body: Container(
-        child: ElevatedButton(
-          child: Text('Estas en la pantalla de prueba'),
-          onPressed: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => DebugScreen()),
-            );
-          },
-        ),
-      ),
+    return GameWidget(
+        game: TrenesGame(),
     );
   }
 }

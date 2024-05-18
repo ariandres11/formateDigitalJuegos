@@ -1,5 +1,5 @@
+import 'package:app/screens/prueba_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../assets.dart';
 import '../trenes_game.dart';
 import 'game_screen.dart';
@@ -14,8 +14,6 @@ class Menu extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          width: 600,
-          height: 800,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
@@ -27,9 +25,24 @@ class Menu extends StatelessWidget {
           alignment: Alignment.center,
           child: Column(
             children: [
+              const Padding(
+                padding: EdgeInsets.all(15),
+                child: Text(
+                  'Trenes',
+                  style: GoogleFonts.lobster(),
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.all(15),
-                child: Text('Trenes', style: TextStyle(fontSize: 52)),
+                padding: const EdgeInsets.only(top: 15),
+                child: ElevatedButton(
+                  child: const Text('Jugar'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PruebaScreen()),
+                    );
+                  },
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
