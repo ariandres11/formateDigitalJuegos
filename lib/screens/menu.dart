@@ -29,7 +29,7 @@ class Menu extends StatelessWidget {
                 padding: EdgeInsets.all(15),
                 child: Text(
                   'Trenes',
-                  style: GoogleFonts.lobster(),
+                  //style: GoogleFonts.lobster(),
                 ),
               ),
               Padding(

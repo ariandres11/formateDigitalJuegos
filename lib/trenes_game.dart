@@ -11,8 +11,8 @@ class TrenesGame extends FlameGame with TapDetector{
     addAll([
       //Instancias de tolva con posicion
       Tolva(tolvaPosition: Vector2(0,0)),
-      Tolva(tolvaPosition: Vector2(0,0)),
-      Bolsa( bolsaPosition: Vector2(40,100)),
+      Tolva(tolvaPosition: Vector2(140,0)),
+      //Bolsa( bolsaPosition: Vector2(40,100)),
     ]);
   }
 }
