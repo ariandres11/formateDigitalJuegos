@@ -5,14 +5,6 @@ import 'game_screen.dart';
 class DebugScreen extends StatelessWidget{
   const DebugScreen({super.key});
 
-   /* final TrenesGame game;
-    static const String id = 'mainMenu';
-
-    const DebugScreen({
-      Key?key,
-      required this.game,
-}) : super(key: key);
-*/
     @override
     Widget build(BuildContext context){
       return Scaffold(
@@ -24,7 +16,6 @@ class DebugScreen extends StatelessWidget{
                 context,
                 MaterialPageRoute(builder: (context) => JuegoScreen(TrenesGame())),
               );
-
               },
           ),
         ),

@@ -15,8 +15,8 @@ class JuegoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body:
-      //Sin el SCSV hace overf
-      SingleChildScrollView(
+          //Sin el SCSV hace overf
+          SingleChildScrollView(
         child: Center(
           child: Container(
             width: 600,
@@ -26,58 +26,70 @@ class JuegoScreen extends StatelessWidget {
                 image: AssetImage(
                   Assets.background,
                 ),
+                fit: BoxFit.cover,
                 //fit: BoxFit.cover,
               ),
             ),
             alignment: Alignment.center,
             child: Stack(
-                children: <Widget>[
-                Container(
-                height: 400,
-                width: 400,
-                child: GameWidget(game: game)
-              ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  child: NumberSelector(),
+              children: <Widget>[
+
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
+                    child: Container(
+                        alignment: Alignment.center,
+                        width: 320, height: 100, child: GameWidget(game: game)),
+                  ),
                 ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  child: NumberSelector(),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 120, 0, 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: NumberSelector(),
+                      ),
+                      SizedBox(
+                        width: 60,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: NumberSelector(),
+                      ),
+                    ],
+                  ),
                 ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 30, 500, 30),
+                    child: Column(
+                      children: [
+                        ElevatedButton(
+                          child: Text('Menu'),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Menu()),
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                //GameWidget(game: game),
               ],
             ),
-
-            Center(
-              child: Column(
-                  children: [
-              ElevatedButton(
-              child: Text('Estas en el juego, si presionas vas al menu'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Menu()),
-                );
-              },
-            ),
-
-
-          ],
+          ),
         ),
       ),
-      //GameWidget(game: game),
-      ],
-    ),)
-    ,
-    )
-    ,
-    )
-    ,
     );
   }
 }

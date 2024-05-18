@@ -31,7 +31,7 @@ class Menu extends StatelessWidget {
                   Column(
                     children: [
                       const Text('Trenes',
-                        style:TextStyle(fontSize: 50)
+                          style:TextStyle(fontSize: 50)
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 15),
