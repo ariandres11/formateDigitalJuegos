@@ -1,9 +1,9 @@
 class Assets{
-  static const background  = 'fondo.png';
-  static const tolva  = 'tolva.png';
-  static const vagones  = 'Vagones.png';
-  static const slot = 'slot.png';
-  static const cabeceraTren  = 'cabecera_tren.png';
-  static const carbon  = 'carbon.png';
+  static const background  = 'images/fondo.png';
+  static const tolva  = 'images/tolva.png';
+  static const vagones  = 'images/Vagones.png';
+  static const slot = 'images/slot.png';
+  static const cabeceraTren  = 'images/cabecera_tren.png';
+  static const carbon  = 'images/carbon.png';
 
 }

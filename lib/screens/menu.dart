@@ -14,12 +14,14 @@ class Menu extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
+          width: 600,
+          height: 800,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
                 Assets.background,
               ),
-              fit: BoxFit.cover,
+              //fit: BoxFit.cover,
             ),
           ),
           alignment: Alignment.center,
