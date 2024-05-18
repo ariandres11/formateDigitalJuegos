@@ -21,7 +21,7 @@ class Menu extends StatelessWidget {
               image: AssetImage(
                 Assets.background,
               ),
-              //fit: BoxFit.cover,
+              fit: BoxFit.cover,
             ),
           ),
           alignment: Alignment.center,

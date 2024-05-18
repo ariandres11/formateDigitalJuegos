@@ -5,5 +5,6 @@ class Assets{
   static const slot = 'images/slot.png';
   static const cabeceraTren  = 'images/cabecera_tren.png';
   static const carbon  = 'images/carbon.png';
+  static const bolsa = 'images/bolsa.png';
 
 }

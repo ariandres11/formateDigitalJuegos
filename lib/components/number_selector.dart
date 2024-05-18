@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 class NumberSelector extends StatefulWidget {
 
-
   const NumberSelector({Key? key}) : super(key: key);
-
 
   @override
   _NumberSelectorState createState() => _NumberSelectorState();
@@ -13,14 +11,12 @@ class NumberSelector extends StatefulWidget {
 class _NumberSelectorState extends State<NumberSelector> {
   int _currentValue = 0;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Colors.orangeAccent,
+          color: Colors.transparent,
           height: 50,
           width: 50,
           //"Rueda giratoria de elementos desplazables"
