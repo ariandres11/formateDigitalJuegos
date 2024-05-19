@@ -28,5 +28,4 @@ class CabeceraTren extends SpriteComponent with HasGameRef<TrenesGame> {
   }
 
 
-
 }

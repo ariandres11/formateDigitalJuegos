@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 import '../assets.dart';
 import '../components/number_selector.dart';
+import '../components/vagon.dart';
 
 class PruebaScreen extends StatelessWidget{
   const PruebaScreen({super.key});
@@ -106,6 +107,27 @@ class BackgroundWidget extends StatelessWidget {
     ),
     ),
     alignment: Alignment.center,
+    );
+  }
+
+}
+
+class VagonWidget extends StatelessWidget {
+  final int cantidadSlots = 2;
+
+  VagonWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Mi Vagón')),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Número de slots: $cantidadSlots'),
+          ],
+        ),
+      ),
     );
   }
 

@@ -1,17 +1,14 @@
 import 'dart:async';
-
 import 'package:app/components/bolsa.dart';
 import 'package:app/components/tolva.dart';
+import 'package:app/components/vagon.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-
-import 'cabecera_tren.dart';
 
 class TrenesGame extends FlameGame with TapDetector{
   TrenesGame();
   final  volverOverlay = 'Volver';
   final numberOverlay = 'NumberSelector';
-
 
   @override
   Future<void> onLoad() async{
@@ -23,8 +20,7 @@ class TrenesGame extends FlameGame with TapDetector{
       Bolsa( bolsaPosition: Vector2(300,20)),
 
     ]);
-
-    //overlays.add(volverOverlay);
+    overlays.add(volverOverlay);
     overlays.add(numberOverlay);
 
   }
