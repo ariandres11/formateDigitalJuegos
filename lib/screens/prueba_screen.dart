@@ -1,8 +1,10 @@
 import 'package:app/trenes_game.dart';
+import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../components/number_selector.dart';
+import '../components/vagon.dart';
 
 class PruebaScreen extends StatelessWidget{
   const PruebaScreen({super.key});
@@ -72,7 +74,8 @@ class NumberWidget extends StatelessWidget {
               child: NumberSelector(),
             ),
             SizedBox(
-              width: 60,
+              width: 100,
+              height: 100,
             ),
             SizedBox(
               width: 70,
@@ -101,27 +104,6 @@ class BackgroundWidget extends StatelessWidget {
     ),
     ),
     alignment: Alignment.center,
-    );
-  }
-
-}
-
-class VagonWidget extends StatelessWidget {
-  final int cantidadSlots = 2;
-
-  VagonWidget();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Mi Vagón')),
-      body: Center(
-        child: Column(
-          children: [
-            Text('Número de slots: $cantidadSlots'),
-          ],
-        ),
-      ),
     );
   }
 

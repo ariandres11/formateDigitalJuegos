@@ -15,19 +15,18 @@ class TrenesGame extends FlameGame with TapDetector{
 
     addAll([
       //Instancias de tolva con posicion
-      Tolva(tolvaPosition: Vector2(220,240)),
-      Tolva(tolvaPosition: Vector2(400,240)),
-      Bolsa( bolsaPosition: Vector2(300,20)),
+      Tolva(tolvaPosition: Vector2(620,340)),
+      Tolva(tolvaPosition: Vector2(780,340)),
+      Bolsa( bolsaPosition: Vector2(700,40)),
+      Vagon(vagonPosition: Vector2(620,500)),
+      Vagon(vagonPosition: Vector2(790,500)),
 
     ]);
     overlays.add(volverOverlay);
     overlays.add(numberOverlay);
-
   }
-
   @override
   void update(double dt){
     super.update(dt);
-
   }
 }
