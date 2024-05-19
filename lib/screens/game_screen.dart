@@ -49,7 +49,7 @@ class JuegoScreen extends StatelessWidget {
                       Container(
                         width: 100,
                         height: 100,
-                        child: NumberSelector(),
+                        //child: NumberSelector(),
                       ),
                       SizedBox(
                         width: 60,
@@ -57,7 +57,7 @@ class JuegoScreen extends StatelessWidget {
                       Container(
                         width: 100,
                         height: 100,
-                        child: NumberSelector(),
+                        //child: NumberSelector(),
                       ),
                     ],
                   ),

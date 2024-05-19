@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class NumberSelector extends StatefulWidget {
+  const NumberSelector({required this.maximoNum});
 
-  const NumberSelector({Key? key}) : super(key: key);
+  final int maximoNum;
+
 
   @override
   _NumberSelectorState createState() => _NumberSelectorState();
@@ -11,13 +13,15 @@ class NumberSelector extends StatefulWidget {
 class _NumberSelectorState extends State<NumberSelector> {
   int _currentValue = 0;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Center(
         child: Container(
-          color: Colors.transparent,
-          height: 50,
+          color: Colors.white,
+          height: 80,
           width: 50,
           //"Rueda giratoria de elementos desplazables"
           child: ListWheelScrollView(
@@ -26,17 +30,17 @@ class _NumberSelectorState extends State<NumberSelector> {
                 _currentValue = value;
               });
             },
-            itemExtent: 20,
+            itemExtent: 40,
             //Rel entre diametro de la rueda y altura elementos
             diameterRatio: 1.5,
-            children: List<Widget>.generate(10, (index) {
+            children: List<Widget>.generate(widget.maximoNum, (index) {
               return Container(
                 alignment: Alignment.center,
                 child: Text(
                   '$index',
                   style: TextStyle(
                     fontSize: 20,
-                    color: index == _currentValue ? Colors.deepOrange : Colors.black,
+                    color: index == _currentValue ? Colors.deepOrange: Colors.black,
                   ),
                 ),
               );

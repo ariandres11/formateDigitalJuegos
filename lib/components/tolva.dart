@@ -5,14 +5,12 @@ import 'package:flame/flame.dart';
 
 class Tolva extends SpriteComponent with HasGameRef<TrenesGame>{
   Tolva({required this.tolvaPosition});
-
-  @override
   final Vector2 tolvaPosition;
 
   @override
   Future<void> onLoad() async {
     final tolva = await Flame.images.load(Assets.tolva);
-    size = Vector2(100, 100);
+    size = Vector2(120, 120);
     sprite = Sprite(tolva);
     position = tolvaPosition;
   }

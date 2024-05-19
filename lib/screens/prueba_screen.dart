@@ -1,21 +1,11 @@
 import 'package:app/trenes_game.dart';
-import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../components/number_selector.dart';
-import '../components/vagon.dart';
 
 class PruebaScreen extends StatelessWidget{
   const PruebaScreen({super.key});
-
-  /*final TrenesGame game;
-  static const String id = 'mainMenu';
-
-  const DebugScreen({
-    Key?key,
-    required this.game,
-  }) : super(key: key);*/
 
   @override
   Widget build(BuildContext context){
@@ -26,10 +16,10 @@ class PruebaScreen extends StatelessWidget{
             return const VolverWidget();
           },
           'NumberSelector' : (context,game){
-            return const NumberWidget();
+            return const NumberWidget(maximoNum: 30,);
           }
       },
-      game: TrenesGame(),
+      game: TrenesGame(30),
     );
   }
 }
@@ -56,38 +46,45 @@ class VolverWidget extends StatelessWidget {
 }
 
 class NumberWidget extends StatelessWidget {
-  const NumberWidget({super.key});
+  final int maximoNum;
+  const NumberWidget({required this.maximoNum});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        //No calcular a mano nada, solo para ver funcionamiento
-        //Se pusieron medidas aproximadas
-        SizedBox(height: 120,),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(30, 260, 0, 0),
+      child: Center(
+
+        child: Column(
           children: [
-            SizedBox(
-              width: 70,
-              height: 70,
-              child: NumberSelector(),
-            ),
-            SizedBox(
-              width: 100,
-              height: 100,
-            ),
-            SizedBox(
-              width: 70,
-              height: 70,
-              child: NumberSelector(),
+            //No calcular a mano nada, solo para ver funcionamiento
+            //Se pusieron medidas aproximadas
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 80,
+                  height: 100,
+                  child: NumberSelector(maximoNum: maximoNum),
+                ),
+                SizedBox(
+                  width: 200,
+                  height: 100,
+                ),
+                SizedBox(
+                  width: 80,
+                  height: 100,
+                  child: NumberSelector(maximoNum: maximoNum),
+                ),
+              ],
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 }
+
 
 class BackgroundWidget extends StatelessWidget {
   const BackgroundWidget({super.key});
