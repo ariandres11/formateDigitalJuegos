@@ -1,5 +1,9 @@
+import 'package:app/cabecera_tren.dart';
 import 'package:app/trenes_game.dart';
+import 'package:flame/components.dart';
+import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
+import 'package:flame/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../assets.dart';
@@ -59,12 +63,12 @@ class NumberWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         //No calcular a mano nada, solo para ver funcionamiento
         //Se pusieron medidas aproximadas
         SizedBox(height: 120,),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
@@ -104,5 +108,8 @@ class BackgroundWidget extends StatelessWidget {
     alignment: Alignment.center,
     );
   }
+
 }
+
+
 

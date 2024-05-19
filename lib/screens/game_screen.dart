@@ -1,6 +1,5 @@
 import 'package:app/components/number_selector.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../trenes_game.dart';
