@@ -10,11 +10,14 @@ class TrenesGame extends FlameGame with TapDetector{
 
   @override
   Future<void> onLoad() async{
+
     addAll([
       //Instancias de tolva con posicion
-      Tolva(tolvaPosition: Vector2(0,0)),
-      Tolva(tolvaPosition: Vector2(140,0)),
-      //Bolsa( bolsaPosition: Vector2(40,100)),
+      Tolva(tolvaPosition: Vector2(220,240)),
+      Tolva(tolvaPosition: Vector2(400,240)),
+      Bolsa( bolsaPosition: Vector2(300,20)),
     ]);
+    overlays.add(volverOverlay);
+    overlays.add(numberOverlay);
   }
 }

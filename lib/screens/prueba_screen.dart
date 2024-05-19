@@ -19,7 +19,7 @@ class PruebaScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return GameWidget(
-      //backgroundBuilder: Builder(builder: (BuildContext context) => const BackgroundWidget(),),
+     //backgroundBuilder: Builder(builder: (BuildContext context) => const BackgroundWidget(),),
       overlayBuilderMap: {
           'Volver' : (context, game) {
             return const VolverWidget();
@@ -38,11 +38,18 @@ class VolverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      child: const Text('Estas en el juego, si presionas vas al menu'),
-      onPressed: () {
-        Navigator.pop(context);
-      },
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(40, 80, 0, 0),
+          child: ElevatedButton(
+            child: const Text('Menu'),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      ],
     );
   }
 }
@@ -52,18 +59,28 @@ class NumberWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-        SizedBox(
-          width: 100,
-          height: 100,
-          child: NumberSelector(),
-        ),
-        SizedBox(
-          width: 100,
-          height: 100,
-          child: NumberSelector(),
+        //No calcular a mano nada, solo para ver funcionamiento
+        //Se pusieron medidas aproximadas
+        SizedBox(height: 120,),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 70,
+              height: 70,
+              child: NumberSelector(),
+            ),
+            SizedBox(
+              width: 60,
+            ),
+            SizedBox(
+              width: 70,
+              height: 70,
+              child: NumberSelector(),
+            ),
+          ],
         ),
       ],
     );
