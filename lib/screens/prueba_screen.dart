@@ -1,14 +1,8 @@
-import 'package:app/cabecera_tren.dart';
 import 'package:app/trenes_game.dart';
-import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
-import 'package:flame/widgets.dart';
 import 'package:flutter/material.dart';
-
 import '../assets.dart';
 import '../components/number_selector.dart';
-import '../components/vagon.dart';
 
 class PruebaScreen extends StatelessWidget{
   const PruebaScreen({super.key});
@@ -24,7 +18,7 @@ class PruebaScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return GameWidget(
-     //backgroundBuilder: Builder(builder: (BuildContext context) => const BackgroundWidget(),),
+        backgroundBuilder: (_) => const BackgroundWidget(),
       overlayBuilderMap: {
           'Volver' : (context, game) {
             return const VolverWidget();
