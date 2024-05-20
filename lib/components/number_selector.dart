@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NumberSelector extends StatefulWidget {
-  const NumberSelector({required this.maximoNum});
 
+  NumberSelector({required this.maximoNum});
   final int maximoNum;
-
 
   @override
   _NumberSelectorState createState() => _NumberSelectorState();
@@ -12,7 +11,6 @@ class NumberSelector extends StatefulWidget {
 
 class _NumberSelectorState extends State<NumberSelector> {
   int _currentValue = 0;
-
 
   @override
   Widget build(BuildContext context) {

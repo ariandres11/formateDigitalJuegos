@@ -3,13 +3,17 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../components/number_selector.dart';
+import '../game_Manager.dart';
 
 class PruebaScreen extends StatelessWidget{
-  const PruebaScreen({super.key});
+  PruebaScreen({super.key});
+
+  final TrenesGame trenesGame = TrenesGame(30);
 
   @override
   Widget build(BuildContext context){
     return GameWidget(
+      game: trenesGame,
         backgroundBuilder: (_) => const BackgroundWidget(),
       overlayBuilderMap: {
           'Volver' : (context, game) {
@@ -20,9 +24,9 @@ class PruebaScreen extends StatelessWidget{
           },
           'BotonPerdiste' : (context,game){
             return const BotonPerdiste();
-          }
+          },
+          'BotonComenzar' : (context,_) => BotonComenzar(game: trenesGame),
       },
-      game: TrenesGame(30),
     );
   }
 }
@@ -48,10 +52,18 @@ class VolverWidget extends StatelessWidget {
 
 class NumberWidget extends StatelessWidget {
   final int maximoNum;
+  final gameManager = GameManager;
+
   const NumberWidget({super.key, required this.maximoNum});
+
 
   @override
   Widget build(BuildContext context) {
+
+    NumberSelector tolva1 = NumberSelector(maximoNum: maximoNum);
+    NumberSelector tolva2 = NumberSelector(maximoNum: maximoNum);
+
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(30, 260, 0, 0),
       child: Center(
@@ -66,7 +78,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: NumberSelector(maximoNum: maximoNum),
+                  child: tolva1,
                 ),
                 const SizedBox(
                   width: 200,
@@ -75,7 +87,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: NumberSelector(maximoNum: maximoNum),
+                  child: tolva2,
                 ),
               ],
             ),
@@ -107,6 +119,22 @@ class BackgroundWidget extends StatelessWidget {
 
 }
 
+class BotonComenzar extends StatelessWidget {
+  final TrenesGame game;
+  const BotonComenzar({super.key, required this.game});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      child: ElevatedButton(
+          onPressed: () {game.comenzar();},
+          child: const Text('Comenzar')
+      ),
+    );
+  }
+}
+
 class BotonPerdiste extends StatelessWidget {
   const BotonPerdiste({super.key});
 
@@ -115,14 +143,17 @@ class BotonPerdiste extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
         child: Container(
+          height: 150,
+          width: 250,
           alignment: Alignment.center,
             color: Colors.lightBlueAccent,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Perdiste'),
+                const Text('Perdiste'),
                 ElevatedButton(
-                    onPressed: () { Navigator.pop(context);},
-                    child: Text('Volver al menu')
+                    onPressed: () {Navigator.pop(context);},
+                    child: const Text('Volver al menu')
                 ),
               ],
             ),

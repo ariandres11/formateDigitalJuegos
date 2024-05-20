@@ -57,11 +57,12 @@ class TrenesGame extends FlameGame{
     */
     overlays.add(volverOverlay);
     overlays.add(numberOverlay);
+    overlays.add('BotonComenzar');
   }
 
   void comenzar(){
 
-    //ocultar boton de accion comenzar
+    overlays.remove('BotonComenzar');
     overlays.remove(numberOverlay);
     //obtener valor de los number_selector y pasarselos a cantTolvas
     for(int i = 0; i <= cantidadVagones; i++){
@@ -69,12 +70,15 @@ class TrenesGame extends FlameGame{
         cantTolva1 -= 3;
       }else{
         overlays.add('BotonPerdiste');
+        pauseEngine();
       }
       if(cantTolva2 > 2){
         cantTolva2 -= 2;
-      }else{overlays.add('BotonPerdiste');}
+      }else{
+        overlays.add('BotonPerdiste');
+        pauseEngine();
+      }
       //animacion del movimiento de los vagones
-
     }
   }
 }

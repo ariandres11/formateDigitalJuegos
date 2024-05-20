@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:app/assets.dart';
 import 'package:app/trenes_game.dart';
 import 'package:flame/components.dart';

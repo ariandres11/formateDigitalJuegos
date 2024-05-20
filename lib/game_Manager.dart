@@ -1,6 +1,8 @@
 
 class GameManager{
-  int carbon = 0;
-  int vagones = 0;
-  List slots = [];
+  List tolvas = [];
+
+  void setTolva(int i, int value){
+    tolvas[i] = value;
+  }
 }

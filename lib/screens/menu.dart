@@ -5,7 +5,7 @@ import '../trenes_game.dart';
 import 'game_screen.dart';
 
 class Menu extends StatelessWidget {
-  const Menu({Key? key});
+  const Menu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class Menu extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const PruebaScreen()),
+                              MaterialPageRoute(builder: (context) => PruebaScreen()),
                             );
                           },
                         ),
