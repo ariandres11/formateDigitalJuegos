@@ -12,7 +12,7 @@ class Bolsa extends SpriteComponent with HasGameRef<TrenesGame> {
   @override
   Future<void> onLoad() async {
     final bolsa = await Flame.images.load(Assets.bolsa);
-    size = Vector2(75, 75);
+    size = Vector2(75, 90);
     sprite = Sprite(bolsa);
     position = bolsaPosition;
   }

@@ -17,6 +17,9 @@ class PruebaScreen extends StatelessWidget{
           },
           'NumberSelector' : (context,game){
             return const NumberWidget(maximoNum: 30,);
+          },
+          'BotonPerdiste' : (context,game){
+            return const BotonPerdiste();
           }
       },
       game: TrenesGame(30),
@@ -35,9 +38,7 @@ class VolverWidget extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(40, 80, 0, 0),
           child: ElevatedButton(
             child: const Text('Menu'),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+            onPressed: () { Navigator.pop(context);},
           ),
         ),
       ],
@@ -47,7 +48,7 @@ class VolverWidget extends StatelessWidget {
 
 class NumberWidget extends StatelessWidget {
   final int maximoNum;
-  const NumberWidget({required this.maximoNum});
+  const NumberWidget({super.key, required this.maximoNum});
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,7 @@ class NumberWidget extends StatelessWidget {
                   height: 100,
                   child: NumberSelector(maximoNum: maximoNum),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 200,
                   height: 100,
                 ),
@@ -105,6 +106,31 @@ class BackgroundWidget extends StatelessWidget {
   }
 
 }
+
+class BotonPerdiste extends StatelessWidget {
+  const BotonPerdiste({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+        child: Container(
+          alignment: Alignment.center,
+            color: Colors.lightBlueAccent,
+            child: Column(
+              children: [
+                Text('Perdiste'),
+                ElevatedButton(
+                    onPressed: () { Navigator.pop(context);},
+                    child: Text('Volver al menu')
+                ),
+              ],
+            ),
+        ),
+    );
+  }
+}
+
 
 
 
