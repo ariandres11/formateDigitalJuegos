@@ -59,11 +59,6 @@ class NumberWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    NumberSelector tolva1 = NumberSelector(maximoNum: maximoNum);
-    NumberSelector tolva2 = NumberSelector(maximoNum: maximoNum);
-
-
     return Padding(
       padding: const EdgeInsets.fromLTRB(30, 260, 0, 0),
       child: Center(
@@ -78,7 +73,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: tolva1,
+                  child: NumberSelector(maximoNum: maximoNum, key: key),
                 ),
                 const SizedBox(
                   width: 200,
@@ -87,7 +82,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: tolva2,
+                  child: NumberSelector(magittximoNum: maximoNum, key: key),
                 ),
               ],
             ),
