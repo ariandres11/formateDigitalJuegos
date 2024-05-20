@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NumberSelector extends StatefulWidget {
-  const NumberSelector({required this.maximoNum});
+  const NumberSelector({required this.maximoNum, Key? key}) : super(key: key);
 
   final int maximoNum;
-
 
   @override
   _NumberSelectorState createState() => _NumberSelectorState();
@@ -12,6 +11,16 @@ class NumberSelector extends StatefulWidget {
 
 class _NumberSelectorState extends State<NumberSelector> {
   int _currentValue = 0;
+
+  int get currentValue => _currentValue;
+
+  //Para ver current value desde otra clase
+
+  /*final key = GlobalKey<_NumberSelectorState>();
+NumberSelector(maximoNum: 10, key: key);
+
+int value = key.currentState!.currentValue;
+Considerar el uso del un callback*/
 
 
   @override

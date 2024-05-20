@@ -66,7 +66,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: NumberSelector(maximoNum: maximoNum),
+                  child: NumberSelector(maximoNum: maximoNum, key: key),
                 ),
                 const SizedBox(
                   width: 200,
@@ -75,7 +75,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: NumberSelector(maximoNum: maximoNum),
+                  child: NumberSelector(maximoNum: maximoNum, key: key),
                 ),
               ],
             ),
