@@ -16,8 +16,11 @@ class TrenesGame extends FlameGame{
   final cantidadVagones = 2;
   final  volverOverlay = 'Volver';
   final numberOverlay = 'NumberSelector';
+  final perdisteOverlay = 'PantallaPerdiste';
+  final comenzarOverlay = 'BotonComenzar';
+  final ganasteOverlay = 'PantallaGanaste';
   int cantTolva1 = 0;
-  int cantTolva2 = 0;
+  int cantTolva2 = 1;
 
   @override
   Future<void> onLoad() async{
@@ -57,28 +60,39 @@ class TrenesGame extends FlameGame{
     */
     overlays.add(volverOverlay);
     overlays.add(numberOverlay);
-    overlays.add('BotonComenzar');
+    overlays.add(comenzarOverlay);
   }
 
   void comenzar(){
-
-    overlays.remove('BotonComenzar');
+    overlays.remove(comenzarOverlay);
     overlays.remove(numberOverlay);
     //obtener valor de los number_selector y pasarselos a cantTolvas
     for(int i = 0; i <= cantidadVagones; i++){
-      if(cantTolva1 > 3){
+      if(cantTolva1 >= 3){
         cantTolva1 -= 3;
       }else{
-        overlays.add('BotonPerdiste');
+        overlays.add(perdisteOverlay);
         pauseEngine();
       }
-      if(cantTolva2 > 2){
+      if(cantTolva2 >= 2){
         cantTolva2 -= 2;
       }else{
-        overlays.add('BotonPerdiste');
+        overlays.add(perdisteOverlay);
         pauseEngine();
       }
       //animacion del movimiento de los vagones
     }
+      if(cantTolva1 == 0 && cantTolva2 == 0){
+        overlays.add(ganasteOverlay);
+        pauseEngine();
+      }
+  }
+  void reiniciar(){
+    overlays.remove(perdisteOverlay);
+    overlays.add(numberOverlay);
+    overlays.add(comenzarOverlay);
+    cantTolva1 = 3;
+    cantTolva2 = 2;
+    //reiniciar animación vagones
   }
 }

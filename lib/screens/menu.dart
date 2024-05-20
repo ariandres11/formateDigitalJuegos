@@ -50,10 +50,7 @@ class Menu extends StatelessWidget {
                         child: ElevatedButton(
                           child: const Text('Salir'),
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => JuegoScreen(game)),
-                            );
+                            Navigator.pop(context);
                           },
                         ),
                       ),

@@ -22,10 +22,11 @@ class PruebaScreen extends StatelessWidget{
           'NumberSelector' : (context,game){
             return const NumberWidget(maximoNum: 30,);
           },
-          'BotonPerdiste' : (context,game){
-            return const BotonPerdiste();
-          },
+          'PantallaPerdiste' : (context,_) => PantallaPerdiste(game: trenesGame),
           'BotonComenzar' : (context,_) => BotonComenzar(game: trenesGame),
+          'PantallaGanaste' : (context, game) {
+          return const PantallaGanaste();
+        },
       },
     );
   }
@@ -82,7 +83,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: NumberSelector(magittximoNum: maximoNum, key: key),
+                  child: NumberSelector(maximoNum: maximoNum, key: key),
                 ),
               ],
             ),
@@ -130,8 +131,9 @@ class BotonComenzar extends StatelessWidget {
   }
 }
 
-class BotonPerdiste extends StatelessWidget {
-  const BotonPerdiste({super.key});
+class PantallaPerdiste extends StatelessWidget {
+  final TrenesGame game;
+  const PantallaPerdiste({super.key, required this.game});
 
   @override
   Widget build(BuildContext context) {
@@ -150,6 +152,10 @@ class BotonPerdiste extends StatelessWidget {
                     onPressed: () {Navigator.pop(context);},
                     child: const Text('Volver al menu')
                 ),
+                ElevatedButton(
+                    onPressed: () {game.reiniciar();},
+                    child: const Text('Reiniciar')
+                ),
               ],
             ),
         ),
@@ -157,6 +163,32 @@ class BotonPerdiste extends StatelessWidget {
   }
 }
 
+class PantallaGanaste extends StatelessWidget {
+  const PantallaGanaste ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      child: Container(
+        height: 150,
+        width: 250,
+        alignment: Alignment.center,
+        color: Colors.yellowAccent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('¡Ganaste!'),
+            ElevatedButton(
+                onPressed: () {Navigator.pop(context);},
+                child: const Text('Volver al menu')
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 
 
