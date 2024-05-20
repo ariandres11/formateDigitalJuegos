@@ -20,12 +20,15 @@ class CabeceraTren extends SpriteComponent with HasGameRef<TrenesGame> {
     sprite = Sprite(cabecera);
   }
 
+  /*
   @override
   void update(double dt) {
     super.update(dt);
 
     position.x += Config.velCabecera * dt;
   }
+
+   */
 
 
 }

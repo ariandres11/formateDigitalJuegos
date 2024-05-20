@@ -3,7 +3,7 @@ import 'package:app/components/bolsa.dart';
 import 'package:app/components/carbon.dart';
 import 'package:app/components/tolva.dart';
 import 'package:app/components/tren.dart';
-//import 'package:app/components/vagon.dart';
+import 'package:app/components/vagon.dart';
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/text.dart';
@@ -28,26 +28,31 @@ class TrenesGame extends FlameGame{
     final screenWidth = size.x;
     final screenHigth = size.y;
 
-    for(int i = 0; i < cantidadCarbon; i++) {
-      add(Carbon(carbonPosition: Vector2((screenWidth/2) + 10, 60 + i * 10.0)));
+    for (int i = 0; i < cantidadCarbon; i++) {
+      add(Carbon(
+          carbonPosition: Vector2((screenWidth / 2) + 10, 60 + i * 10.0)));
     }
     addAll([
       //Tolvas
-      Tolva(tolvaPosition: Vector2((screenWidth/2) - 185, (screenHigth / 2) - 120)),
-      Tolva(tolvaPosition: Vector2((screenWidth/2) + 95,(screenHigth / 2) - 120)),
+      Tolva(tolvaPosition: Vector2(
+          (screenWidth / 2) - 185, (screenHigth / 2) - 120)),
+      Tolva(tolvaPosition: Vector2(
+          (screenWidth / 2) + 95, (screenHigth / 2) - 120)),
       //Bolsa
-      Bolsa( bolsaPosition: Vector2((screenWidth/2) - 20, 40)),
+      Bolsa(bolsaPosition: Vector2((screenWidth / 2) - 20, 40)),
       TextComponent(text: '$cantidadCarbon',
-          position: Vector2((screenWidth/2) + 3, 63),
+          position: Vector2((screenWidth / 2) + 3, 63),
           textRenderer: TextPaint(
               style: const TextStyle(
                   color: Colors.black,
                   fontSize: 25))),
       //Vagones
-      Vagon(cantidadSlots:3, vagonPosition: Vector2((screenWidth/2) - 175, screenHigth - 200)),
-      Vagon(cantidadSlots: 2, vagonPosition: Vector2((screenWidth/2) + 105 ,screenHigth - 200)),
+      //Vagon(cantidadSlots: 3,
+          //vagonPosition: Vector2((screenWidth / 2) - 175, screenHigth - 200)),
+      //Vagon(cantidadSlots: 2,
+         // vagonPosition: Vector2((screenWidth / 2) + 105, screenHigth - 200)),
       //Tren (deberia instanciar la cabecera y los vagones a continuacon, error con el sprite)
-      //Tren(cantidadVagones: 2, cabeceraPosition: Vector2(screenWidth - 200, screenHigth - 200)),
+      Tren(cantidadVagones: 2, cabeceraPosition: Vector2(screenWidth - 200, screenHigth - 200)),
     ]);
     /*
     bool tolvapar = true;
@@ -60,6 +65,7 @@ class TrenesGame extends FlameGame{
       }
     }
     */
+
     overlays.add(volverOverlay);
     overlays.add(numberOverlay);
     overlays.add(comenzarOverlay);
