@@ -2,7 +2,6 @@ import 'package:app/screens/prueba_screen.dart';
 import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../trenes_game.dart';
-import 'game_screen.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});

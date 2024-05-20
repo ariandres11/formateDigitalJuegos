@@ -1,9 +1,7 @@
 import 'package:app/trenes_game.dart';
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
-
 import 'assets.dart';
-import 'config.dart';
 
 class CabeceraTren extends SpriteComponent with HasGameRef<TrenesGame> {
   CabeceraTren();

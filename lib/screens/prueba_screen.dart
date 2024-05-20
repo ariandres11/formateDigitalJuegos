@@ -20,7 +20,7 @@ class PruebaScreen extends StatelessWidget{
             return const VolverWidget();
           },
           'NumberSelector' : (context,game){
-            return const NumberWidget(maximoNum: 30,);
+            return const NumberWidget(maximoNum: 31,);
           },
           'PantallaPerdiste' : (context,_) => PantallaPerdiste(game: trenesGame),
           'BotonComenzar' : (context,_) => BotonComenzar(game: trenesGame),

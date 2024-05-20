@@ -1,7 +1,6 @@
 import 'package:app/components/vagon.dart';
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
-
 import '../assets.dart';
 
 class Tren extends SpriteComponent {
@@ -22,9 +21,9 @@ class Tren extends SpriteComponent {
     //No utilizar posicion de la cabecera, hacer vector nuevo
     Vector2 vagonPosition = Vector2.zero();
     //add(Vagon(cantidadSlots: 2, vagonPosition: Vector2(vagonPosition.x - 300, 100)));
-    for(int i = 0; i< 8; i++){
-      add(Vagon(cantidadSlots: 2, vagonPosition: Vector2(vagonPosition.x - 100 - i *100, 100)));
-      add(Vagon(cantidadSlots: 3, vagonPosition: Vector2(vagonPosition.x - 200 - i *100, 100)));
+    for(int i = 0; i< cantidadVagones/2; i++){
+      add(Vagon(cantidadSlots: 2, vagonPosition: Vector2(vagonPosition.x - 140 - i * 100, 0)));
+      add(Vagon(cantidadSlots: 3, vagonPosition: Vector2(vagonPosition.x - 410 - i * 100, 0)));
     }
   }
 }

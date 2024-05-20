@@ -1,10 +1,7 @@
-import 'package:app/trenes_game.dart';
 import 'package:flutter/material.dart';
-import 'game_screen.dart';
 
 class DebugScreen extends StatelessWidget{
   const DebugScreen({super.key});
-
 
     @override
     Widget build(BuildContext context){

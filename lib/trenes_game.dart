@@ -27,10 +27,15 @@ class TrenesGame extends FlameGame{
   Future<void> onLoad() async{
     final screenWidth = size.x;
     final screenHigth = size.y;
+    bool tolvapar = true;
 
     for (int i = 0; i < cantidadCarbon; i++) {
-      add(Carbon(
-          carbonPosition: Vector2((screenWidth / 2) + 10, 60 + i * 10.0)));
+        tolvapar = !tolvapar;
+        if (tolvapar) {
+          add(Carbon(carbonPosition: Vector2((screenWidth/2) - 130, 240 + i * 10.0)));
+        } else {
+          add(Carbon(carbonPosition: Vector2((screenWidth/2) + 150, 240 + i * 10.0)));
+        }
     }
     addAll([
       //Tolvas
@@ -52,17 +57,10 @@ class TrenesGame extends FlameGame{
       //Vagon(cantidadSlots: 2,
          // vagonPosition: Vector2((screenWidth / 2) + 105, screenHigth - 200)),
       //Tren (deberia instanciar la cabecera y los vagones a continuacon, error con el sprite)
-      Tren(cantidadVagones: 2, cabeceraPosition: Vector2(screenWidth - 200, screenHigth - 200)),
+      Tren(cantidadVagones: 2, cabeceraPosition: Vector2(screenWidth - 500, screenHigth - 200)),
     ]);
     /*
-    bool tolvapar = true;
-    for(int i = 0; i < cantidadCarbon; i++) {
-      tolvapar = !tolvapar;
-      if (tolvapar) {
-        add(Carbon(carbonPosition: Vector2((screenWidth/2) - 130, 240 + i * 10.0)));
-      } else {
-        add(Carbon(carbonPosition: Vector2((screenWidth/2) + 150, 240 + i * 10.0)));
-      }
+
     }
     */
 
@@ -103,4 +101,5 @@ class TrenesGame extends FlameGame{
     cantTolva2 = 2;
     //reiniciar animación vagones
   }
+
 }
