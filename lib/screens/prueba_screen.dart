@@ -20,7 +20,11 @@ class PruebaScreen extends StatelessWidget{
             return const VolverWidget();
           },
           'NumberSelector' : (context,game){
-            return const NumberWidget(maximoNum: 31,);
+            return NumberWidget(
+              maximoNum: 31, onValueChanged: (int value) {
+                print('seleccionado: $value');
+            },
+            );
           },
           'PantallaPerdiste' : (context,_) => PantallaPerdiste(game: trenesGame),
           'BotonComenzar' : (context,_) => BotonComenzar(game: trenesGame),
@@ -54,8 +58,10 @@ class VolverWidget extends StatelessWidget {
 class NumberWidget extends StatelessWidget {
   final int maximoNum;
   final gameManager = GameManager;
+  final Function(int) onValueChanged;
 
-  const NumberWidget({super.key, required this.maximoNum});
+  const NumberWidget({super.key, required this.maximoNum, required this.onValueChanged});
+
 
 
   @override
@@ -74,8 +80,8 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: NumberSelector(maximoNum: maximoNum, key: key),
-                ),
+                  child: NumberSelector(maximoNum: maximoNum, onValueChanged: onValueChanged),
+                 ),
                 const SizedBox(
                   width: 200,
                   height: 100,
@@ -83,7 +89,7 @@ class NumberWidget extends StatelessWidget {
                 SizedBox(
                   width: 80,
                   height: 100,
-                  child: NumberSelector(maximoNum: maximoNum, key: key),
+                  child: NumberSelector(maximoNum: maximoNum, onValueChanged: onValueChanged),
                 ),
               ],
             ),

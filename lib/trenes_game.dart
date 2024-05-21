@@ -20,6 +20,7 @@ class TrenesGame extends FlameGame{
   final perdisteOverlay = 'PantallaPerdiste';
   final comenzarOverlay = 'BotonComenzar';
   final ganasteOverlay = 'PantallaGanaste';
+  //Estos deben recibir el valor de number selector al apretar comenzar
   int cantTolva1 = 0;
   int cantTolva2 = 1;
 

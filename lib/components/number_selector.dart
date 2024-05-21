@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NumberSelector extends StatefulWidget {
-  const NumberSelector({required this.maximoNum, Key? key}) : super(key: key);
+  final ValueChanged<int> onValueChanged;
+  const NumberSelector({required this.maximoNum, Key? key, required this.onValueChanged}) : super(key: key);
 
   //NumberSelector({required this.maximoNum});
   final int maximoNum;
@@ -11,6 +12,7 @@ class NumberSelector extends StatefulWidget {
 }
 
 class _NumberSelectorState extends State<NumberSelector> {
+  //Valor actual del ns
   int _currentValue = 0;
 
   int get currentValue => _currentValue;
@@ -37,6 +39,7 @@ Considerar el uso del un callback*/
             onSelectedItemChanged: (value) {
               setState(() {
                 _currentValue = value;
+                widget.onValueChanged(value);
               });
             },
             itemExtent: 40,
