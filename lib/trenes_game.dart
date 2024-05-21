@@ -3,7 +3,6 @@ import 'package:app/components/bolsa.dart';
 import 'package:app/components/carbon.dart';
 import 'package:app/components/tolva.dart';
 import 'package:app/components/tren.dart';
-import 'package:app/components/vagon.dart';
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/text.dart';
@@ -60,10 +59,6 @@ class TrenesGame extends FlameGame{
       //Tren (deberia instanciar la cabecera y los vagones a continuacon, error con el sprite)
       Tren(cantidadVagones: 2, cabeceraPosition: Vector2(screenWidth - 500, screenHigth - 200)),
     ]);
-    /*
-
-    }
-    */
 
     overlays.add(volverOverlay);
     overlays.add(numberOverlay);

@@ -22,6 +22,7 @@ class PruebaScreen extends StatelessWidget{
           'NumberSelector' : (context,game){
             return NumberWidget(
               maximoNum: 31, onValueChanged: (int value) {
+                //provider
                 print('seleccionado: $value');
             },
             );

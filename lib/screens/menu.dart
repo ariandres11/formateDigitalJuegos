@@ -8,7 +8,6 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final game = TrenesGame(30); // Instancia de TrenesGame
 
     return Scaffold(
       body: Center(
